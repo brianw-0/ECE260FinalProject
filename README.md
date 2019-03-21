@@ -14,3 +14,10 @@ Github: https://github.com/nesl/adversarial_genattack
 Prior Convictions: Black-Box Adversarial Attacks with Bandits and Priors
 Paper: https://arxiv.org/abs/1807.07978
 Github: https://github.com/MadryLab/blackbox-bandits
+
+Changes have been made to the files to utilize the subset of Imagenet that we have made ( /images/ ).  
+This subset consists of 40 images that are 500x3** pixels, and are named by this scheme: imagenet_id.class_name.image_number.jpg
+The mapping between imagenet_id and the class name is found at https://gist.github.com/yrevar/942d3a0ac09ec9e5eb3a.
+Be aware that we have added 1 to the id, because the attack implementations use this added value, not the original.
+
+
