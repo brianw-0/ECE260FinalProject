@@ -21,3 +21,33 @@ The mapping between imagenet_id and the class name is found at https://gist.gith
 Be aware that we have added 1 to the id, because the attack implementations use this added value, not the original.
 
 
+Each folder contains it's own algorithm and running instructions, but here are the commands that we have used.
+
+For Blackbox Bandits:
+```
+python main.py --json-config=configs/nes-l2-final.json 
+```
+You can alter this json file to set specific parameters i.e. max number of iterations
+
+For genAttack:
+```
+python main.py --input_dir=./images/ --test_size=40 --eps=1 --alpha=0.15 --mutation_rate=0.1 --max_steps=1500 --output_dir=genattack_run3 --resize_dim=96 --pop_size=6 --adaptive=True
+```
+Where output_dir is the folder name that you want to save your output to.  
+
+For ZOO Attack:
+```
+python test_all.py -a black -d imagenet -n 40 --solver adam --untargeted --use_resize --init_size=96 -s "black_results"
+
+```
+Where "black_results" is the name of the output directory, and the attack should resize the images to 96x96 for higher efficiency.
+
+
+
+It would be much easier if you set up a virtual environment to run this code.  This was tested with Python 3.5+.  You can use
+```
+pip install -r requirements.txt
+```
+to get most of the packages.  Some might be missing, just a warning
+
+

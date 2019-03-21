@@ -1,0 +1,8 @@
+torchvision==0.2.2.post3
+pyparsing==2.3.1
+matplotlib==3.0.2
+numpy==1.16.2
+tensorflow-gpu==1.13.1
+tqdm==4.31.1
+
+
